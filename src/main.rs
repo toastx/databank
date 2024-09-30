@@ -54,15 +54,6 @@ async fn verify_password_handler(
     }
 }
 
-async fn upload_file_handler(data: web::Data<AppState>) -> impl Responder {
-    let client = data.client.clone();
-    let authorization = &data.jwt_secret;
-
-    match upload_file(&client, &authorization, "path_to_file".to_string()).await {
-        Ok(_) => HttpResponse::Ok().body("File uploaded successfully"),
-        Err(_) => HttpResponse::InternalServerError().body("Failed to upload file"),
-    }
-}
 
 async fn show_files_handler(data: web::Data<AppState>) -> impl Responder {
     println!("show files endpoint hit");
@@ -129,7 +120,6 @@ async fn main() -> std::io::Result<()> {
                     .allow_any_method()
                     .allow_any_header(),
             )
-            .route("/upload", web::post().to(upload_file_handler))
             .route("/files", web::get().to(show_files_handler))
             .route("/verify_password", web::post().to(verify_password_handler))
             .route("/health", web::get().to(health_check))
