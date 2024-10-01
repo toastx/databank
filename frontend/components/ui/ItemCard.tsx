@@ -60,12 +60,11 @@ const ItemCard: React.FC<ItemCardProps> = ({ item, onView, onDelete }) => {
         body: JSON.stringify({ id: item.id }),
       });
       console.log(response)
+      
       if (response.ok) {
-        const data = await response.json();
-        console.log(data)
         toast({
           title: 'Success',
-          description: data.message,
+          description: 'Item deleted successfully',
           status: 'success',
           duration: 5000,
           isClosable: true,
