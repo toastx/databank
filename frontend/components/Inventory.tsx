@@ -84,6 +84,8 @@ const InventoryPage = () => {
             <ItemCard
               key={item.cid}
               item={item}
+              onView={(itemId) => console.log(`Viewing item ${itemId}`)}
+              onDelete={(itemId) => console.log(`Deleting item ${itemId}`)}
             />
           ))
         )}
