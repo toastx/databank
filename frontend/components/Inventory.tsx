@@ -14,7 +14,7 @@ const InventoryPage = () => {
   useEffect(() => {
     const fetchCredentials = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:8080/secrets');
+        const response = await fetch('arbitrary-fleurette-toastx-68b8a5b6.koyeb.app/secrets');
         const data = await response.json();
         const pinataJwt = data.pinataJwt;
         const pinataGateway = data.pinataGateway;

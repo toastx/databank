@@ -9,7 +9,7 @@ export default function LoginPage() {
 
     const handleLogin = async () => {
         
-        const response = await fetch('http://127.0.0.1:8080/verify_password', {
+        const response = await fetch('arbitrary-fleurette-toastx-68b8a5b6.koyeb.app/verify_password', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

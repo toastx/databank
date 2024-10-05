@@ -21,7 +21,7 @@ const ItemCard: React.FC<ItemCardProps> = ({ item, onView, onDelete }) => {
   useEffect(() => {
     const fetchCredentials = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:8080/secrets');
+        const response = await fetch('arbitrary-fleurette-toastx-68b8a5b6.koyeb.app/secrets');
         const data = await response.json();
         const pinataJwt = data.pinataJwt;
         const pinataGateway = data.pinataGateway;
@@ -52,7 +52,7 @@ const ItemCard: React.FC<ItemCardProps> = ({ item, onView, onDelete }) => {
   };
   const handleDelete = async () => {
     try {
-      const response = await fetch('http://127.0.0.1:8080/delete', {
+      const response = await fetch('arbitrary-fleurette-toastx-68b8a5b6.koyeb.app/delete', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
