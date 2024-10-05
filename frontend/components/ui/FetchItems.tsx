@@ -15,7 +15,7 @@ const useFetchItems = () => {
   useEffect(() => {
     const fetchItems = async () => {
       try {
-        const response = await fetch('arbitrary-fleurette-toastx-68b8a5b6.koyeb.app/files');
+        const response = await fetch('https://arbitrary-fleurette-toastx-68b8a5b6.koyeb.app/files');
         setError("")
         if (!response.ok) {
           throw new Error('Failed to fetch items');
