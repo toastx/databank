@@ -1,6 +1,6 @@
 use actix_cors::Cors;
 use actix_web::{
-    web::{self, Json},
+    web::{self},
     App, HttpResponse, HttpServer, Responder,
 };
 use dotenv::dotenv;
