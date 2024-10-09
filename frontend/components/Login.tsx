@@ -3,7 +3,11 @@ import {  UnlockIcon } from "@chakra-ui/icons";
 import { useState } from "react";
 
 
-export default function LoginPage() {
+interface LoginPageProps {
+    onLoginSuccess: () => void;
+  }
+
+const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess }) => {
     const [password,setPassword] = useState("");
     const [error,setError] = useState("");
 
@@ -21,6 +25,7 @@ export default function LoginPage() {
             const data = await response.json();
             console.log(data);
             if (data.success) {
+                onLoginSuccess();
                 setError("");
             } else {
                 setError(data.message); 
@@ -80,3 +85,5 @@ export default function LoginPage() {
     )
 
 }
+
+export default LoginPage;
